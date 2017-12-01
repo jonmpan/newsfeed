@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>New York Times Search</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<header class="container">
+		<div class="jumbotron">
+			<h1><span class="fa fa-newspaper-o"></span> New York Times Search</h1>
+		</div>
+	</header>
+
+
+	<main role="main" class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><span class="glyphicon glyphicon-th-large"></span> Search Parameters</h3>
+			</div>
+			<div class="panel-body">
+				<form class="bs-example bs-example-form" action="GET">
+					<div class="input-group">
+						<label for="searchTerm">Search Term</label>
+						<input type="text" id="searchTerm" class="form-control" placeholder="Search Term">
+					</div>
+					<div class="input-group">
+						<label for="numRecordsSelect">Number of Records to Retrieve</label>
+						<input type="text" id="numRecordsSelect" class="form-control" placeholder="Number of Records to Retrieve">
+					</div>
+					<div class="input-group">
+						<label for="startYear">Start year (Optional)</label>
+						<input type="text" id="startYear" class="form-control" placeholder="YYYY">
+					</div>
+					<div class="input-group">
+						<label for="endYear">End Year (Optional)</label>
+						<input type="text" id="endYear" class="form-control" placeholder="YYYY">
+					</div>
+					<button id="runSearch" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
+					<button class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Clear Results</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><span class="glyphicon glyphicon-th-large"></span> Top Results</h3>
+			</div>
+			<div class="panel-body">
+				<div id="wellSection"></div>
+			</div>
+		</div>
+	</main>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="assets/javascript/app.js"></script>
+</body>
+</html>
