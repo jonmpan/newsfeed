@@ -3,6 +3,7 @@ var numRecordsSelect = ""
 var startYear = ""
 var endYear = ""
 var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=7ae404a1d4314eeb99346ce943877b88:0:74623931&q="+searchTerm+"&begin_date="+startYear+"0101&end_date="+endYear+"0101"
+var searchTermN;
 
 $('#runSearch').click(function(){
 	event.preventDefault();
@@ -46,11 +47,16 @@ var ajaxRequest = function(){
     	else {
 	    	for(i=0; i<numRecordsSelect; i++){
 	    		var i1 = i+1;
-	    	$('#wellSection').append('<div class="well" id="articleWell-1"><h3><span class="label label-primary">'+i1+'</span><strong>'+response.response.docs[i].headline.main+'</h5><h5>Section: '+response.response.docs[i].section_name+'</h5><a target="_blank" href="'+response.response.docs[i].web_url+'">'+response.response.docs[i].web_url+'</a></div>');
-	    		if(searchTermN=='trump' || searchTermN=='donaldtrump' || searchTermN=='trumpdonald'){
-	    			$('.animateThis').addClass('animated infinite rotate360');
+	    		var mainHeadline = response.response.docs[i].headline.main;
+	    		if(response.response.docs[i].headline.main.length < 1){
+	    			var mainHeadline = 'No Title';
 	    		}
-	    	}
+		    		$('#wellSection').append('<div class="well" id="articleWell-1"><h3><span class="label label-primary">'+i1+'</span><strong>'+mainHeadline+'</h5><h5>Section: '+response.response.docs[i].section_name+'</h5><a target="_blank" href="'+response.response.docs[i].web_url+'">'+response.response.docs[i].web_url+'</a></div>');
+		    		if(searchTermN=='trump' || searchTermN=='donaldtrump' || searchTermN=='trumpdonald'){
+		    			$('.animateThis').addClass('animated infinite rotate360');
+		    		}
+	    		}
+
     	}
 	});
 }
