@@ -26,6 +26,12 @@ $('#runSearch').click(function(){
 	ajaxRequest();
 })
 
+
+$("#clearForm").click(function(event){
+	event.preventDefault();
+	$('.bs-example-form')[0].reset();
+});
+
 var ajaxRequest = function(){
 	$.ajax({
 		url: queryUrl,
